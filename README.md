@@ -22,13 +22,9 @@ Ensure you have the following installed:
 
 - Python 3.x
 - Jupyter Notebook
-- Required Python packages (listed in `requirements.txt`)
+- Required Python packages 
 
-Install the required Python packages:
-
-```bash
-pip install -r requirements.txt
-```
+Install the required Python packages
 
 ### Running the Notebook
 
