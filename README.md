@@ -34,8 +34,8 @@ pip install -r requirements.txt
 
 1. **Clone the repository**:
     ```bash
-    git clone https://github.com/Swaph/kenya-sentimentmonitor.git
-    cd kenya-sentimentmonitor
+    git clone https://github.com/Swaph/Law-Enforcement-Public-Sentiment-Analysis.git
+    cd Law-Enforcement-Public-Sentiment-Analysis
     ```
 
 2. **Launch Jupyter Notebook**:
