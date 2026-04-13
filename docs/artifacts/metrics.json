@@ -1,0 +1,15 @@
+{
+  "accuracy": 0.9781818181818182,
+  "f1_weighted": 0.9770488132557098,
+  "best_params": {
+    "classifier__C": 2.0
+  },
+  "training_mode": "grid_search",
+  "label_distribution": {
+    "negative": 4974,
+    "positive": 341,
+    "neutral": 185
+  },
+  "dataset_rows": 5500,
+  "text_column_used": "preprocessed_text"
+}

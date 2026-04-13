@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+.venv/
+venv/
+
+# Tooling
+.pytest_cache/
+.coverage
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Artifacts
+artifacts/*.joblib
+artifacts/*.json
+artifacts/*.txt
+artifacts/*.csv

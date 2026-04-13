@@ -1,0 +1,56 @@
+{
+  "full_name": "Your Name",
+  "headline": "researcher, public-interest builder, and applied ML practitioner",
+  "publications": [
+    {
+      "title": "Law Enforcement Public Sentiment Analysis",
+      "role": "project lead and model builder",
+      "impact": "the work produced a reproducible sentiment pipeline and a polished evaluation artifact for non-technical reviewers.",
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/your-username/your-repo"
+        },
+        {
+          "label": "Google Scholar",
+          "url": "https://scholar.google.com/citations?user=YOUR_ID"
+        }
+      ]
+    }
+  ],
+  "posters": [
+    {
+      "title": "Conference Poster Title",
+      "role": "poster presenter",
+      "impact": "the poster translated the research into a concise visual argument for a broad audience.",
+      "links": [
+        {
+          "label": "Poster PDF",
+          "url": "https://your-domain.org/poster.pdf"
+        },
+        {
+          "label": "DOI",
+          "url": "https://doi.org/10.xxxx/placeholder"
+        }
+      ]
+    }
+  ],
+  "startups": [
+    {
+      "title": "Startup or Venture Name",
+      "role": "founder or co-founder",
+      "impact": "the initiative showed execution, user empathy, and the ability to turn a problem into a shipped product.",
+      "links": [
+        {
+          "label": "Website",
+          "url": "https://your-startup.example.com"
+        },
+        {
+          "label": "Press or Demo",
+          "url": "https://example.com/demo"
+        }
+      ]
+    }
+  ],
+  "notes": "Replace placeholders with live links before using this in an application. Keep the wording truthful and evidence-backed."
+}
