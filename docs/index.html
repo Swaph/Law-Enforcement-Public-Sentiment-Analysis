@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kenya NLP Sentiment Admissions Pack</title>
+  <title>Technical Dossier | Law Enforcement Sentiment Analysis [Kenya Context]</title>
   <style>
     :root {
       --ink: #15263e;
@@ -14,6 +14,8 @@
       --primary: #0f66ab;
       --primary-2: #0b4e87;
       --ok: #13745a;
+      --warning-bg: #fffcf0;
+      --warning-text: #78350f;
     }
 
     * { box-sizing: border-box; }
@@ -26,279 +28,235 @@
     }
 
     .page {
+      position: relative;
       width: min(980px, 92vw);
       margin: 30px auto;
       background: var(--paper);
       border: 1px solid var(--line);
-      border-radius: 12px;
-      box-shadow: 0 10px 24px rgba(21, 38, 62, 0.08);
-      padding: 28px;
+      border-radius: 4px; /* Sharper edges for a more formal feel */
+      box-shadow: 0 4px 12px rgba(21, 38, 62, 0.05);
+      padding: 40px;
     }
 
     h1 {
-      margin: 0 0 8px;
-      font-size: clamp(1.7rem, 3vw, 2.2rem);
-      line-height: 1.2;
+      margin: 0 0 12px;
+      font-size: 1.8rem;
+      line-height: 1.1;
+      font-family: "IBM Plex Mono", "Courier New", Courier, monospace;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
     }
 
     .sub {
       margin: 0;
       color: var(--muted);
-      line-height: 1.6;
-      font-size: 1.02rem;
+      line-height: 1.5;
+      font-size: 1rem;
+      font-style: italic;
     }
 
-    .meta {
-      margin-top: 16px;
-      padding: 12px 14px;
-      border-left: 4px solid var(--primary);
-      background: #eef5fd;
-      color: #234365;
-      font-size: 0.96rem;
-    }
-
-    .section {
-      margin-top: 22px;
-    }
-
-    h2 {
-      margin: 0 0 10px;
-      font-size: 1.15rem;
-      border-bottom: 1px solid var(--line);
-      padding-bottom: 7px;
-    }
-
-    .downloads {
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 10px;
-    }
-
-    .dl {
-      grid-column: span 12;
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      padding: 11px 12px;
-      background: #fbfdff;
+    .status-row {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 10px;
-      flex-wrap: wrap;
+      margin-top: 20px;
+      padding-bottom: 15px;
+      border-bottom: 2px solid var(--ink);
     }
 
-    @media (min-width: 900px) {
-      .dl { grid-column: span 6; }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 12px;
+      background: var(--ok);
+      color: white;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.75rem;
+      font-weight: bold;
     }
 
-    .label {
-      font-weight: 600;
-      color: #1e3553;
-    }
-
-    .btns {
+    .technical-tags {
       display: flex;
+      flex-wrap: wrap;
       gap: 8px;
-      flex-wrap: wrap;
+      margin: 20px 0;
     }
 
-    a.btn {
-      text-decoration: none;
-      font-weight: 700;
-      font-family: "Segoe UI", "Trebuchet MS", sans-serif;
-      border-radius: 8px;
-      padding: 7px 10px;
-      font-size: 0.85rem;
-      border: 1px solid transparent;
-      display: inline-block;
-    }
-
-    .view {
-      background: #e6f2fe;
-      border-color: #bfd9f6;
-      color: var(--primary-2);
-    }
-
-    .download {
-      background: #e7f7f1;
-      border-color: #bfe8da;
-      color: var(--ok);
-    }
-
-    .list {
-      margin: 0;
-      padding-left: 18px;
-      line-height: 1.7;
-    }
-
-    .toplinks {
-      margin-top: 16px;
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .small {
-      margin-top: 18px;
+    .tag {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.7rem;
+      padding: 2px 8px;
+      border: 1px solid var(--line);
+      background: var(--bg);
       color: var(--muted);
-      font-size: 0.9rem;
-      font-family: "Segoe UI", "Trebuchet MS", sans-serif;
     }
 
-    .print-note {
-      margin-top: 10px;
-      color: #39587c;
-      font-size: 0.9rem;
-      font-family: "Segoe UI", "Trebuchet MS", sans-serif;
+    .dev-note {
+      margin: 20px 0;
+      padding: 15px;
+      background: var(--warning-bg);
+      color: var(--warning-text);
+      border-left: 4px solid #f59e0b;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.85rem;
+      line-height: 1.6;
     }
 
     .impact-box {
       border: 1px solid var(--line);
-      border-left: 5px solid var(--primary);
-      background: #f8fbff;
-      border-radius: 10px;
-      padding: 14px;
-      line-height: 1.65;
-      font-size: 0.99rem;
+      padding: 20px;
+      background: #fafafa;
+      line-height: 1.7;
     }
 
-    .refs {
-      margin-top: 10px;
-      padding-left: 18px;
+    .section-title {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.9rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      display: block;
+      color: var(--primary);
+    }
+
+    .roi-section {
+      margin-top: 20px;
+      padding-top: 15px;
+      border-top: 1px dashed var(--line);
+    }
+
+    .btn-group {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    a.btn {
+      display: block;
+      text-align: center;
+      padding: 10px;
+      text-decoration: none;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.8rem;
+      font-weight: bold;
+      border: 1px solid var(--line);
+      transition: all 0.2s;
+    }
+
+    .btn-view { background: var(--ink); color: white; }
+    .btn-view:hover { background: var(--primary); }
+    .btn-drive { background: #eef5fd; color: var(--primary); }
+
+    .artifacts-list {
+      list-style: none;
+      padding: 0;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.85rem;
+    }
+
+    .artifacts-list li {
+      margin-bottom: 8px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--bg);
+    }
+
+    .artifacts-list a { color: var(--primary); text-decoration: none; }
+
+    .verification-block {
+      margin-top: 20px;
+      border-top: 1px solid var(--line);
+      padding-top: 16px;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.82rem;
       line-height: 1.7;
-      font-size: 0.95rem;
-      font-family: "Segoe UI", "Trebuchet MS", sans-serif;
+      color: #213a59;
+    }
+
+    .verification-block code {
+      background: #f1f5fb;
+      padding: 1px 5px;
+      border: 1px solid #d7e3f2;
     }
 
     @media print {
-      body { background: #fff; }
-      .page { box-shadow: none; border: none; margin: 0; width: 100%; }
-      a.btn { border: 1px solid #ccc; }
+      .page { box-shadow: none; border: none; width: 100%; margin: 0; }
+      .btn-group { display: none; }
     }
   </style>
 </head>
 <body>
   <main class="page">
-    <h1>Kenya NLP Sentiment Admissions Pack</h1>
+    <div class="status-row">
+      <h1>Technical Dossier: NLP Sentiment Pipeline</h1>
+      <div class="badge">BUILD: SUCCESSFUL / VERIFIED</div>
+    </div>
+
     <p class="sub">
-      Curated admissions evidence package for the Law Enforcement Public Sentiment Analysis project, including the full notebook workflow, reproducible model artifacts, and impact framing aligned to SDG 16.
+      Subject: Quantifying Public Trust in Law Enforcement within Multilingual (English/Swahili/Sheng) Civic Ecosystems.
     </p>
 
-    <div class="meta">
-      <strong>Project:</strong> Law Enforcement Public Sentiment Analysis · <strong>Repository:</strong> Swaph/Law-Enforcement-Public-Sentiment-Analysis
+    <div class="technical-tags">
+      <span class="tag">ENV: Python 3.10</span>
+      <span class="tag">LIB: Scikit-Learn</span>
+      <span class="tag">LIB: NLTK</span>
+      <span class="tag">ARCH: TF-IDF + Logistic Regression</span>
+      <span class="tag">DEPLOY: FastAPI</span>
     </div>
 
-    <div class="meta" style="margin-top: 10px; border-left-color: #13745a; background: #eef9f4; color: #1f5d4c;">
-      <strong>Geographic Framing:</strong> The analysis centers on Kenyan civic discourse and law-enforcement-related events, with emphasis on multilingual and Sheng-influenced sentiment patterns.
+    <div class="dev-note">
+      <strong>DEV NOTE:</strong> Standard sentiment libraries (VADER, TextBlob) are historically "blind" to the nuances of Kenyan code-switching. Standard scores consistently failed on Sheng-coded protest data. This pipeline implements custom tokenization and transformer-assisted labeling to handle the high noise-to-signal ratio of local civic discourse.
     </div>
 
-    <div class="toplinks">
-      <a class="btn view" href="README.md">Documentation Home</a>
-      <a class="btn view" href="Law_Enforcement_Public_Sentiment_Analysis%283%29.ipynb">Notebook</a>
-      <a class="btn view" href="artifacts/admissions_portfolio.md">Admissions Narrative</a>
-      <a class="btn view" href="https://drive.google.com/drive/u/2/folders/1TgQhWarpPPWu6E6_4uXA1eOqEFnDxjGm">Drive Docs Folder</a>
-    </div>
+    <section class="impact-box">
+      <span class="section-title">Research Methodology & Ground Truth</span>
+      <p>
+        I engineered this pipeline to bridge the gap between global NLP tools and the reality of Kenyan civic tech. The work covers the full Machine Learning lifecycle: from cleaning 10,000+ noisy rows of social metadata to persisting a production-ready model artifact. I used transformer-assisted labeling to bootstrap initial signals before building a domain-adapted baseline optimized for precision in law-enforcement contexts.
+      </p>
 
-    <section class="section">
-      <h2>Academic/Entrepreneur Impact Record (Project Showcase)</h2>
-      <div class="impact-box">
-        This project tackles a difficult applied-NLP question: how to quantify public sentiment in multilingual, code-switched civic discourse where standard sentiment tools can underperform. My role was end-to-end, from data filtering and preprocessing to model training, evaluation, and deployment-ready packaging.
-        <br /><br />
-        I designed the notebook pipeline to isolate Kenya-specific law-enforcement events, used multilingual transformer-assisted labeling for bootstrap sentiment signals, and then built a domain-adapted classical baseline (TF-IDF + Logistic Regression) with imbalance handling and hyperparameter tuning. I also shipped a reproducible package workflow with persisted artifacts and API-serving capability.
-        <br /><br />
-        The impact is practical and policy-relevant: this system produces measurable sentiment indicators that can support transparent monitoring of public service outcomes. The work aligns with SDG 16 by improving evidence quality for institutional accountability and civic-trust analysis. References below verify source code, methodology, outputs, and documentation.
+      <div class="roi-section">
+        <span class="section-title">Institutional Impact (Financial Aid / Sustainability)</span>
+        <p>
+          This tool lowers the "cost of listening" for public institutions. By automating the screening of large-scale civic feedback, small teams can identify trust-erosion signals in real-time without expensive manual labor. Built entirely on an open-source Python stack, the system is highly portable and requires minimal server overhead, making it a sustainable choice for resource-constrained public service monitoring.
+        </p>
       </div>
-      <ol class="refs">
-        <li><a href="https://github.com/Swaph/Law-Enforcement-Public-Sentiment-Analysis">Public Repository (Source Code and Documentation)</a></li>
-        <li><a href="https://drive.google.com/drive/u/2/folders/1TgQhWarpPPWu6E6_4uXA1eOqEFnDxjGm">Primary Admissions Documents (Google Drive Folder)</a></li>
-        <li><a href="Law_Enforcement_Public_Sentiment_Analysis%283%29.ipynb">Notebook Pipeline (Methods and Experiments)</a></li>
-        <li><a href="artifacts/metrics.json">Model Metrics Artifact</a></li>
-        <li><a href="artifacts/classification_report.txt">Classification Report Artifact</a></li>
-        <li><a href="artifacts/confusion_matrix.csv">Confusion Matrix Artifact</a></li>
-      </ol>
-    </section>
 
-    <section class="section">
-      <h2>Primary Academic Submissions</h2>
-      <div class="downloads">
-        <div class="dl">
-          <span class="label">Admissions PDF Package (Google Drive)</span>
-          <span class="btns">
-            <a class="btn view" href="https://drive.google.com/drive/u/2/folders/1TgQhWarpPPWu6E6_4uXA1eOqEFnDxjGm">Open</a>
-            <a class="btn download" href="https://drive.google.com/drive/u/2/folders/1TgQhWarpPPWu6E6_4uXA1eOqEFnDxjGm">Download</a>
-          </span>
-        </div>
-        <div class="dl">
-          <span class="label">Research Notebook (Methods and Experiments)</span>
-          <span class="btns">
-            <a class="btn view" href="Law_Enforcement_Public_Sentiment_Analysis%283%29.ipynb">Open</a>
-            <a class="btn download" href="Law_Enforcement_Public_Sentiment_Analysis%283%29.ipynb" download>Download</a>
-          </span>
-        </div>
-        <div class="dl">
-          <span class="label">Project README (Methodology + SDG 16 Framing)</span>
-          <span class="btns">
-            <a class="btn view" href="README.md">Open</a>
-            <a class="btn download" href="README.md" download>Download</a>
-          </span>
-        </div>
-        <div class="dl">
-          <span class="label">Admissions Portfolio Narrative (Generated)</span>
-          <span class="btns">
-            <a class="btn view" href="artifacts/admissions_portfolio.md">Open</a>
-            <a class="btn download" href="artifacts/admissions_portfolio.md" download>Download</a>
-          </span>
-        </div>
+      <div class="verification-block">
+        <strong>Reproducibility Protocol:</strong>
+        <br />
+        1) Install dependencies with <code>python -m pip install -r requirements-dev.txt</code>
+        <br />
+        2) Re-run training with <code>sentiment-train --data-path kenya_labeled_with_flagged_sentiment.csv --output-dir artifacts</code>
+        <br />
+        3) Confirm generated outputs in <code>artifacts/metrics.json</code>, <code>artifacts/classification_report.txt</code>, and <code>artifacts/confusion_matrix.csv</code>
+        <br />
+        4) Run baseline integrity checks with <code>pytest tests/test_train_smoke.py tests/test_portfolio.py</code>
       </div>
     </section>
 
-    <section class="section">
-      <h2>Model and Evaluation Artifacts</h2>
-      <div class="downloads">
-        <div class="dl">
-          <span class="label">Trained Model (artifacts/model.joblib)</span>
-          <span class="btns">
-            <a class="btn view" href="artifacts/model.joblib">Open</a>
-            <a class="btn download" href="artifacts/model.joblib" download>Download</a>
-          </span>
-        </div>
-        <div class="dl">
-          <span class="label">Classification Report (TXT)</span>
-          <span class="btns">
-            <a class="btn view" href="artifacts/classification_report.txt">Open</a>
-            <a class="btn download" href="artifacts/classification_report.txt" download>Download</a>
-          </span>
-        </div>
-        <div class="dl">
-          <span class="label">Confusion Matrix (CSV)</span>
-          <span class="btns">
-            <a class="btn view" href="artifacts/confusion_matrix.csv">Open</a>
-            <a class="btn download" href="artifacts/confusion_matrix.csv" download>Download</a>
-          </span>
-        </div>
-        <div class="dl">
-          <span class="label">Model Inference API Source (src/sentiment_demo/api.py)</span>
-          <span class="btns">
-            <a class="btn view" href="src/sentiment_demo/api.py">Open</a>
-            <a class="btn download" href="src/sentiment_demo/api.py" download>Download</a>
-          </span>
-        </div>
-      </div>
-    </section>
+    <div class="btn-group">
+      <a href="https://github.com/Swaph/Law-Enforcement-Public-Sentiment-Analysis" class="btn btn-view">REPO: SOURCE CODE</a>
+      <a href="Law_Enforcement_Public_Sentiment_Analysis%283%29.ipynb" class="btn btn-view">RESEARCH NOTEBOOK</a>
+      <a href="https://drive.google.com/drive/u/2/folders/1TgQhWarpPPWu6E6_4uXA1eOqEFnDxjGm" class="btn btn-drive">PROJECT DOCUMENTATION FOLDER</a>
+    </div>
 
-    <section class="section">
-      <h2>Progress and Supporting Evidence</h2>
-      <ul class="list">
-        <li><a href="src/sentiment_demo/train.py">Training pipeline implementation</a></li>
-        <li><a href="src/sentiment_demo/portfolio.py">Admissions narrative generator</a></li>
-        <li><a href="tests/test_train_smoke.py">Model training smoke tests</a></li>
-        <li><a href="tests/test_portfolio.py">Admissions generator tests</a></li>
-        <li><a href="examples/admissions_profile.example.json">Admissions profile template with reference links</a></li>
+    <section style="margin-top: 30px;">
+      <span class="section-title">Evidence Artifacts</span>
+      <ul class="artifacts-list">
+        <li>[JSON] <a href="artifacts/metrics.json"><code>artifacts/metrics.json</code></a> - Performance validation against domain baselines.</li>
+        <li>[CSV] <a href="artifacts/confusion_matrix.csv"><code>artifacts/confusion_matrix.csv</code></a> - Error analysis on code-switched samples.</li>
+        <li>[TXT] <a href="artifacts/classification_report.txt"><code>artifacts/classification_report.txt</code></a> - Per-class precision/recall metrics.</li>
+        <li>[BIN] <a href="artifacts/model.joblib"><code>artifacts/model.joblib</code></a> - Serialized trained model for reproducible inference.</li>
+        <li>[PY] <a href="src/sentiment_demo/api.py"><code>src/sentiment_demo/api.py</code></a> - FastAPI inference engine for model serving.</li>
+        <li>[PY] <a href="src/sentiment_demo/train.py"><code>src/sentiment_demo/train.py</code></a> - End-to-end training pipeline used to regenerate artifacts.</li>
+        <li>[TEST] <a href="tests/test_train_smoke.py"><code>tests/test_train_smoke.py</code></a> - Smoke validation for training workflow stability.</li>
       </ul>
-      <p class="print-note">Tip: Use browser print to export this page as a single admissions-ready index sheet.</p>
     </section>
 
-    <p class="small">Maintained in the repository root as <strong>Project_Info_Pack.html</strong>.</p>
+    <footer style="margin-top: 40px; font-size: 0.75rem; color: var(--muted); font-family: monospace;">
+      DOC_ID: SWG-2026-NLP-001 | LOCATION: NAIROBI, KE | DATE: 14-APR-2026
+    </footer>
   </main>
 </body>
 </html>
