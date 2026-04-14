@@ -1,10 +1,10 @@
-# Admissions Portfolio: Your Name
+# Admissions Portfolio
 
 ## Headline
 researcher, public-interest builder, and applied ML practitioner
 
 ## 250-Word Response
-Your Name is a researcher, public-interest builder, and applied ML practitioner who combines applied research, public-interest engineering, and venture-style execution. In this project, I built a reproducible sentiment-analysis pipeline on 5500 labeled records and achieved 0.978 accuracy with 0.977 weighted F1 using grid_search. Research evidence: GitHub: https://github.com/your-username/your-repo | Google Scholar: https://scholar.google.com/citations?user=YOUR_ID Poster evidence: Poster PDF: https://your-domain.org/poster.pdf | DOI: https://doi.org/10.xxxx/placeholder Entrepreneurship evidence: Website: https://your-startup.example.com | Press or Demo: https://example.com/demo My role was end-to-end: I shaped the data pipeline, trained and evaluated the model, and packaged the work into a FastAPI demo so non-technical reviewers can inspect results quickly. For research, I can point to Law Enforcement Public Sentiment Analysis, where I served as project lead and model builder. The work mattered because the work produced a reproducible sentiment pipeline and a polished evaluation artifact for non-technical reviewers. For dissemination, I presented Conference Poster Title as poster presenter; that poster translated the technical work into a concise story for a broader audience and demonstrated the poster translated the research into a concise visual argument for a broad audience. For entrepreneurship, Startup or Venture Name shows how I approached execution as a builder rather than a spectator. I acted as founder or co-founder, and the impact was the initiative showed execution, user empathy, and the ability to turn a problem into a shipped product. This combination of measurable technical output, public communication, and execution discipline is the most honest signal I can give an admissions committee about my readiness for rigorous graduate work.
+I am a researcher, public-interest builder, and applied ML practitioner who combines applied research, public-interest engineering, and venture-style execution. In this project, I built a reproducible sentiment-analysis pipeline on 5,500 labeled records and achieved 0.9782 accuracy with 0.9770 weighted F1 using grid-search training. My research evidence is anchored in the public repository for Law Enforcement Public Sentiment Analysis, the notebook workflow, and the exported model artifacts. My role was end-to-end: I shaped the data pipeline, trained and evaluated the model, and packaged the work into a FastAPI demo so non-technical reviewers can inspect results quickly. For this admissions review, the key point is not only that I obtained strong metrics, but that I can point to the exact notebook, source code, metrics file, classification report, and confusion matrix that produced them. The work matters because it produced a reproducible sentiment pipeline and a polished evaluation artifact for non-technical reviewers. This is the kind of evidence I would want a rigorous committee to examine: a concrete research question, a transparent method, reproducible outputs, and a public-interest framing tied to SDG 16. That combination of measurable technical output, public communication, and execution discipline is the strongest honest signal I can give about my readiness for rigorous graduate work.
 
 ## Verified Project Metrics
 
@@ -21,21 +21,15 @@ Your Name is a researcher, public-interest builder, and applied ML practitioner 
 - Law Enforcement Public Sentiment Analysis
   Role: project lead and model builder
   Impact: the work produced a reproducible sentiment pipeline and a polished evaluation artifact for non-technical reviewers.
-  Evidence: GitHub: https://github.com/your-username/your-repo | Google Scholar: https://scholar.google.com/citations?user=YOUR_ID
+  Evidence: GitHub: https://github.com/Swaph/Law-Enforcement-Public-Sentiment-Analysis
 
 ## Posters
 
-- Conference Poster Title
-  Role: poster presenter
-  Impact: the poster translated the research into a concise visual argument for a broad audience.
-  Evidence: Poster PDF: https://your-domain.org/poster.pdf | DOI: https://doi.org/10.xxxx/placeholder
+  I can add poster or presentation evidence here once I have a live link.
 
 ## Entrepreneurship
 
-- Startup or Venture Name
-  Role: founder or co-founder
-  Impact: the initiative showed execution, user empathy, and the ability to turn a problem into a shipped product.
-  Evidence: Website: https://your-startup.example.com | Press or Demo: https://example.com/demo
+  I can add entrepreneurship evidence here once I have a live link.
 
 ## Notes
-Replace placeholders with live links before using this in an application. Keep the wording truthful and evidence-backed.
+Keep the wording truthful and evidence-backed. Only include claims that can be verified from the repository, notebook, or external links.
